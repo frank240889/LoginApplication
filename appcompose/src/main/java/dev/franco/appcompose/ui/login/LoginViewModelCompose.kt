@@ -18,7 +18,6 @@ import dev.franco.login.usecase.LoginResult
 import dev.franco.login.usecase.LoginUseCase
 import dev.franco.loginapplicationcompose.R
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -56,7 +55,7 @@ class LoginViewModelCompose @Inject constructor(
     private fun login(
         user: CharSequence,
         password: CharSequence,
-    ) = viewModelScope.launch(dispatcher + SupervisorJob()) {
+    ) = viewModelScope.launch(dispatcher) {
         loginUseCase.login(user, password).collect {
             _loginState = getLoginViewStateResult(it)
             _loading = false
