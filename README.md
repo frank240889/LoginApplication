@@ -8,6 +8,8 @@ The app is composed by 3 modules:
 
 You can run whatever App XML or App Compose. Previews shown below.
 
+IMPORTANT!: Because the app uses a fake API implementation, success result or fail is randomized.
+
 
 DEMO APP COMPOSE:
 
