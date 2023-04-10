@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import androidx.activity.viewModels
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doOnTextChanged
 import androidx.lifecycle.Lifecycle
@@ -21,6 +22,7 @@ class LoginActivity : AppCompatActivity() {
 
     private val loginViewModelXML: LoginViewModelXML by viewModels()
     private lateinit var binding: ActivityLoginBinding
+    private var dialogResult: AlertDialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +31,12 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
         setupListeners()
         startCoroutines()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        dialogResult?.dismiss()
+        dialogResult = null
     }
 
     private fun setupListeners() {
@@ -83,7 +91,7 @@ class LoginActivity : AppCompatActivity() {
         title: String,
         message: CharSequence,
     ) {
-        MaterialAlertDialogBuilder(this, R.style.MaterialAlertDialog_Rounded)
+        dialogResult = MaterialAlertDialogBuilder(this, R.style.MaterialAlertDialog_Rounded)
             .setTitle(title)
             .setMessage(message)
             .setPositiveButton(R.string.accept) { dialog, _ ->
@@ -91,6 +99,7 @@ class LoginActivity : AppCompatActivity() {
                 dialog?.dismiss()
             }
             .create()
-            .show()
+
+        dialogResult?.show()
     }
 }
