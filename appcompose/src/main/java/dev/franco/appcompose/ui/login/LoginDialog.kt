@@ -9,8 +9,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.layoutId
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.window.DialogProperties
-import dev.franco.appcompose.ui.theme.DEFAULT_CORNER_RADIUS
+import dev.franco.appcompose.ui.theme.LoginApplicationComposeTheme
 import dev.franco.loginapplicationcompose.R
 
 @Composable
@@ -41,7 +42,9 @@ internal fun LoginDialog(
         confirmButton = {
             OutlinedButton(
                 onClick = onConfirmButton,
-                shape = RoundedCornerShape(DEFAULT_CORNER_RADIUS),
+                shape = RoundedCornerShape(
+                    LoginApplicationComposeTheme.orientation.defaultCornerRadius,
+                ),
                 modifier = Modifier
                     .testTag("login_dialog_confirm_button")
                     .layoutId("login_dialog_confirm_button"),
@@ -55,9 +58,24 @@ internal fun LoginDialog(
             dismissOnBackPress = true,
             dismissOnClickOutside = true,
         ),
-        shape = RoundedCornerShape(DEFAULT_CORNER_RADIUS),
+        shape = RoundedCornerShape(
+            LoginApplicationComposeTheme.orientation.defaultCornerRadius,
+        ),
         modifier = Modifier
             .testTag("login_dialog")
             .layoutId("login_dialog"),
     )
+}
+
+@Preview
+@Composable
+private fun LoginDialogPreview() {
+    LoginApplicationComposeTheme {
+        LoginDialog(
+            title = "Título",
+            message = "El mensaje",
+            onDismissRequest = {},
+            onConfirmButton = {},
+        )
+    }
 }
