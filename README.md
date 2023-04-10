@@ -6,6 +6,8 @@ The app is composed by 3 modules:
 2. App XML: User interface made with XML (Android View System)
 3. App Compose: User interface made with Compose.
 
+Runs on Android 6+
+
 IMPORTANT!: Because the app uses a fake API implementation, success or fail result is randomized.
 
 You can run whatever App XML or App Compose as shown below:
