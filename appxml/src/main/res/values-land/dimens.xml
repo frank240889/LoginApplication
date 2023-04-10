@@ -1,0 +1,5 @@
+<resources>
+    <dimen name="activity_horizontal_margin">48dp</dimen>
+    <dimen name="vertical_margin_card_login">48dp</dimen>
+    <dimen name="horizontal_margin_card_login">128dp</dimen>
+</resources>

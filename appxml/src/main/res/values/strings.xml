@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">LoginApplicationXML</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="email_or_user">Correo o usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="empty_user">El usuario no puede estar vacío</string>
+    <string name="empty_password">La contraseña no puede estar vacía</string>
+    <string name="invalid_credentials">Usuario y/o contraseña incorrectos</string>
+    <string name="io_error">Revisa tu conexión a internet</string>
+    <string name="unknown_error">Error desconocido, contacta a soporte al 5555555555</string>
+    <string name="success_login">¡Inicio de sesión exitoso!</string>
+    <string name="accept">Aceptar</string>
+    <string name="attention">¡Atención!</string>
+    <string name="server_error">Error de servidor.</string>
+    <string name="timeout_error">La conexión tardo demasiado en responder.</string>
+</resources>
